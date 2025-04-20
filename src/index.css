@@ -25,3 +25,8 @@
   display:none;
 
 }
+
+.scroll3::-webkit-scrollbar{
+  display:none;
+
+}

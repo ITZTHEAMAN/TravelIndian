@@ -123,8 +123,8 @@ const specialPackages = [
   }
 ];
 
-const SpecialPackageCard = ({ name, duration, description, placesToVisit, image,couplePrice }) => (
-  <div className="bg-white ml-[80px] w-[360px] rounded-lg shadow-md overflow-hidden text-black">
+const SpecialPackageCard = ({ name, duration, description, placesToVisit, image, couplePrice }) => (
+  <div className="bg-white w-full max-w-[360px] rounded-lg shadow-md overflow-hidden text-black">
     <img src={image} alt={name} className="w-full h-48 object-cover" />
     <div className="p-4">
       <h3 className="text-xl font-semibold">{name}</h3>
@@ -137,19 +137,18 @@ const SpecialPackageCard = ({ name, duration, description, placesToVisit, image,
         ))}
       </ul>
     </div>
-    <div className='flex items-center justify-evenly'>
-          <div><h1 className='font-bold text-xl'>Price-₹{couplePrice}</h1></div>
-          <button className='bg-red-400 m-2 p-2 pl-2 pr-2 rounded-xl'>Book Tour</button>
-         </div>
-
+    <div className="flex items-center justify-between p-4">
+      <h1 className="font-bold text-xl">₹{couplePrice}</h1>
+      <button className="bg-red-400 p-2 rounded-xl text-white">Book Tour</button>
+    </div>
   </div>
 );
 
 const SpecialPackagesComponent = () => {
   return (
-    <div className="max-w-7xl flex flex-col items-center justify-center pt-[100px] mx-ly Adventure in Dubai Duration: 5 Days, 4 Nightsauto px-4 sm:px-6 lg:px-8 py-10 ">
-      <h2 className="text-4xl text-black font-bold text-center pl-8 mb-8">Special Tour Packages</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 flex items-center justify-center">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <h2 className="text-4xl text-black font-bold text-center mb-8">Special Tour Packages</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
         {specialPackages.map((packageInfo, index) => (
           <SpecialPackageCard key={index} {...packageInfo} />
         ))}

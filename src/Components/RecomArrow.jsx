@@ -1,17 +1,26 @@
-import React from 'react'
+import React from 'react';
 
 function RecomArrow() {
   return (
-    <div className='bg-[#ffffff]'>
-        <div className='flex items-center justify-center mr-40'> <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-black pb-8">
-    Or Choose From Here
-  </h1></div>
-    <div className='bg-[#ffffff] w-full h-32 flex items-center justify-center'>
-        <img className='h-full h-32 mr-48 rotate-12 mb-8' src="https://i.imghippo.com/files/uhfI51727471343.avif" alt="" />
+    <div className='bg-[#ffffff] py-8 px-4'>
+      
+      {/* Heading */}
+      <div className='flex justify-center text-center mb-6'>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-black">
+          Or Choose From Here
+        </h1>
+      </div>
+
+      {/* Arrow Image */}
+      <div className='flex justify-center'>
+        <img
+          className='h-24 sm:h-28 md:h-32 rotate-12'
+          src="https://i.imghippo.com/files/uhfI51727471343.avif"
+          alt="Arrow"
+        />
+      </div>
     </div>
-    </div>
-  )
+  );
 }
 
-export default RecomArrow
-
+export default RecomArrow;

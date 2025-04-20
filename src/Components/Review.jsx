@@ -38,7 +38,7 @@ const reviews = [
     rating: 4
   },
   {
-    name: "Jay Rathore",
+    name: "shivam",
     location: "Aligarh, Uttar Pradesh",
     review: "Everthing is good for me , good expirence i will say just book from here.",
     image: "https://images.unsplash.com/photo-1456327102063-fb5054efe647?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG1lbiUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D",
@@ -47,30 +47,39 @@ const reviews = [
 ];
 
 const ReviewCard = ({ review }) => (
-  <div className="bg-white shadow-lg rounded-lg p-6 text-center">
-    <img
-      src={review.image}
-      alt={review.name}
-      className="w-24 h-24 mx-auto rounded-full object-cover mb-4"
-    />
-    <h3 className="text-xl font-bold text-gray-800">{review.name}</h3>
-    <p className="text-gray-600 mb-2">{review.location}</p>
-    <div className="flex justify-center mb-3">
+  <div className="bg-white shadow-md rounded-xl p-5 text-left flex flex-col items-start gap-3">
+    <div className="flex items-center gap-4">
+      <img
+        src={review.image}
+        alt={review.name}
+        className="w-16 h-16 rounded-full object-cover"
+      />
+      <div>
+        <h3 className="text-lg font-semibold text-gray-800">{review.name}</h3>
+        <p className="text-sm text-gray-500">{review.location}</p>
+      </div>
+    </div>
+    <div className="flex gap-1">
       {[...Array(review.rating)].map((_, i) => (
-        <FaStar key={i} className="text-yellow-500" />
+        <FaStar key={i} className="text-yellow-500 text-sm" />
       ))}
     </div>
-    <p className="text-gray-700">{review.review}</p>
+    <p className="text-gray-700 text-sm">{review.review}</p>
   </div>
 );
 
 const CustomerReviews = () => {
   return (
-    <div className="bg-[#FFFFFF] py-16">
-      <div className="max-w-7xl mx-auto text-center px-6">
-        <h2 className="text-4xl font-bold text-gray-800 mb-6">What Our Customers Say</h2>
-        <p className="text-lg text-gray-600 mb-12">Real reviews from travelers across India</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+    <div className="bg-white py-14">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
+          What Our Customers Say
+        </h2>
+        <p className="text-base sm:text-lg text-gray-600 mb-10">
+          Real reviews from travelers across India
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.map((review, index) => (
             <ReviewCard key={index} review={review} />
           ))}

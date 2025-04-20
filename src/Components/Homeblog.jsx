@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function Homeblog() {
   const Posts = [
@@ -61,25 +61,41 @@ function Homeblog() {
       thoughts: "The best time to visit is between March and June. The weather is lovely, and the tea gardens are in full bloom!",
       image: "https://images.unsplash.com/photo-1578449258772-293b5394140c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDE2fHxEYXJqZWVsaW5nfGVufDB8fHx8MTY3MTI5NzI1OQ&ixlib=rb-1.2.1&q=80&w=400",
       bimage: "https://www.alphonsostories.com/AlphonSoStoriesImages/BlogImage/Darjeeling-in-48-Hours-things-to-do-Blog-final--Augsut-2022-cover-lg.jpg"
-    }]
+    }
+  ];
+
   return (
-    <div className='bg-[#ffffff] text-black p-4 pt-16 pb-10  '>
-      <hr />
-      <h1 className='text-2xl font-bold'>Our Latest Blog's</h1>
-     <div className='flex'>
-     {Posts.map((item)=>(
-       <div className='w-80 h-80 bg-[#FFFFFF] rounded-xl overflow-hidden drop-shadow-2xl m-4'>
-       <div className='h-4/6 overflow-hidden '><img className='w-full h-full object-cover' src={item.bimage} alt="" /></div> 
-       <div className='flex flex-col items-center '> <h1 className='text-xl text-bold'>{item.name}</h1>
-        <h1 className='font-bold text-mg'>{item.location}</h1>
-        <h1 className='text-mg'>Post on:-{item.date}</h1>
+    <div className='bg-[#ffffff] text-black px-4 py-10'>
+      <hr className="mb-4" />
+      <h1 className='text-2xl font-bold mb-6'>Our Latest Blog's</h1>
+
+      <div className='scroll3 overflow-x-auto pb-[10px]'>
+        <div className=' flex space-x-4'>
+          {Posts.map((item) => (
+            <div
+              key={item.id}
+              className='min-w-[300px] max-w-xs flex-shrink-0 bg-white rounded-xl overflow-hidden drop-shadow-lg'
+            >
+              <div className='h-48 overflow-hidden'>
+                <img
+                  className='w-full h-full object-cover'
+                  src={item.bimage}
+                  alt=""
+                />
+              </div>
+              <div className='p-3 text-center'>
+                <h1 className='text-lg font-semibold'>{item.name}</h1>
+                <p className='font-medium'>{item.location}</p>
+                <p className='text-sm text-gray-500'>Posted on: {item.date}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-     ))}
-</div>
-<hr />
+
+      <hr className="mt-10" />
     </div>
-  )
+  );
 }
 
-export default Homeblog
+export default Homeblog;
